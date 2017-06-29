@@ -1,0 +1,123 @@
+<html>
+<head>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Roboto:100,200,300,400,500,600,700,800,900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/chatBot.css">
+</head>
+<body ng-app="chatbot" ng-controller="chatbotCtrl" ng-init="init()">
+	<div class="container-fluid pageBk">
+		<div class="row mainTitle" ng-class="(realEstatesDataBuyer.length || realEstatesDataSeller.Top_10_Agents.length) ? 'realEstates':null">
+			<div class="col-md-12 exploreTitle">Explore new Real Estate chatbot</div>
+			<div class="col-md-12 exploreSubTitle">Real Estate chatbot will recommend the best properties you desire</div>
+			<div class="col-md-12 exploreButton" ng-click="chatToggle('open');" ng-bind="messageList.length>1?'Reset your chat':'Start chat now'"></div>
+		</div>
+		<div class="row realEstatescroller" ng-class="realEstatesDataBuyer.length?'realEstates':null">
+			<div class="col-md-3 cardWrapper" ng-repeat="item in realEstatesDataBuyer">
+				<div class="row">
+<!-- 					<div class="col-md-12 PropertySubType">Property Type</div>
+					<div class="col-md-12 PropertySubTypeVal">{{item.PropertySubType}}</div> -->
+					<div class="col-md-12 SI_Address">Address</div>
+					<div class="col-md-12 SI_AddressVal">{{item.SI_Address}}</div>
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-12 LivingArea">Living Area</div>
+							<div class="col-md-12 LivingAreaVal">{{item.LivingArea}}</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-12 BedroomsTotal">Bedrooms</div>
+							<div class="col-md-12 BedroomsTotalVal">{{item.BedroomsTotal}}</div>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="row">
+							<div class="col-md-12 ListPrice">Price</div>
+							<div class="col-md-12 ListPriceVal">{{item.ListPrice}}</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row SellerPriceTrendWrapper" ng-class="realEstatesDataSeller.Top_10_Agents?'realEstates':null">
+			<div class="col-md-12 SellerPriceTrendVal" ng-if="realEstatesDataSeller.PriceTrend" ng-bind="realEstatesDataSeller.PriceTrend"></div>
+			<div class="col-md-12 SellerPriceTrend" ng-if="realEstatesDataSeller.PriceTrend">Price per sqft</div>
+			<div class="col-md-12 noPriceTrend" ng-if="!realEstatesDataSeller.PriceTrend">No price per sqft availble!</div>
+		</div>
+		<div class="row SellerRealEstatescroller" ng-class="realEstatesDataSeller.Top_10_Agents?'realEstates':null">
+			<div class="col-md-3 cardWrapperSeller" ng-repeat="item in realEstatesDataSeller.Top_10_Agents">
+				<div class="row">
+					<div class="col-md-12 SellerThumbNail"></div>
+					<div class="col-md-12 SellerAgentName">{{item.AgentName}}</div>
+				</div>
+				<div class="row SellerPhoneNumberWrapper">
+					<div class="col-md-12 SellerPhoneNumber">Ph:</div>
+					<div class="col-md-12 SellerPhoneNumberVal">{{item.PhoneNumber}}</div>
+				</div>
+			</div>
+		</div>
+	  <div class="row">
+	    <div class="col-md-3 col-xs-12 chatBox" ng-class="showChatBot?'msgShrink':null">
+	      <div class="row">
+	        <div class="col-md-12 chatTitle">
+	          <div class="row">
+	            <div class="col-md-10 chatUser">REbot</div>
+	            <div class="col-md-2 chatClose" ng-class="showChatBot?'rotateArrow':null" ng-click="showChatBot?chatToggle('close'):chatToggle('open')"></div>
+	          </div>
+	        </div>
+	        <div class="col-md-12 chatWrapper">
+	          <div class="col-md-12 chatScroller">
+	            <div class="row" ng-class="(item.messageSource==='messageFromBot')?'incomingMessage':'outgoingMessage'" ng-repeat="item in messageList">
+	              <div class="col-md-2 userThumbnail" ng-if="item.messageSource==='messageFromBot'"></div>
+	              <div class="col-md-10 userMessage" ng-if="item.messageSource==='messageFromBot'">
+	              	<span ng-bind="item.messageText"></span>
+	              	<a href="{{item.link}}" ng-bind="item.link" target="_blank"></a>
+	              </div>
+	              <div class="col-md-10 userMessageAgo" ng-if="item.messageSource==='messageFromBot'" ng-bind="item.messageTime"></div>
+	              <div class="col-md-10 userMessage" ng-if="item.messageSource==='messageFromUser'" ng-bind="item.messageText"></div>
+	              <div class="col-md-10 userMessageAgo" ng-if="item.messageSource==='messageFromUser'" ng-bind="item.messageTime"></div>
+	            </div>
+	            <div class="row loadingMessage" ng-if="showMsgLoader">
+	              <div class="col-md-2 userThumbnail"></div>
+	              <div class="col-md-10 userMessage">
+	                <div class="col-md-4 loadingAnim">
+	              </div>
+	            </div>
+	            </div>
+	          </div>
+	        </div>
+	        <div class="col-md-12 autofillWrapper" style="height: {{(autofillFiltered.length*25)+4}}px" ng-if="autofill && autofill.data && messageText && !autofillHide">
+          	<div class="row autofillList" ng-repeat="item in (autofill.data | autofill:messageText | limitTo : 8) as autofillFiltered" ng-bind="item" ng-click="autofillSelect(item)" ng-class="$index === autofillActive?'selectedAutofill':null"></div>
+          	<div class="row autofillList" ng-if="autofillFiltered.length===0">No other {{autofill.type}} found!</div>
+          </div>
+	        <div class="col-md-12 chatSend">
+	          <div class="row">
+				<form id="labnol" method="get" action="https://www.google.com/search">
+					<div class="col-md-2 speech" ng-click="startDictation()"></div>
+
+		            <div class="col-md-8 textMessage">
+		              <textarea class="textMessageField" id="messageText" ng-model="messageText" ng-keydown="sendMessage($event)" ng-change="changeMessageText()"></textarea>
+		            </div>
+
+
+		            <div class="col-md-2 sendButton" ng-click="sendMessageToBot()"></div>
+				</form>
+
+	          </div>
+
+
+
+	        </div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/chatBox.js"></script>
+    <!-- HTML5 Speech Recognition API -->
+
+</body>
+</html>
