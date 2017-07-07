@@ -1,0 +1,472 @@
+/* GENERAL */
+.countdown-time-left { font-weight: bold; color: #555555; text-align: center; font-size: 12px; text-transform: uppercase; }
+.zoomContainer { z-index: 10; }
+.clearer { clear:both; }
+
+
+
+/* Product View */
+.main-countdown { 
+	clear:both; 
+	max-width:220px; 
+	margin:10px 0 20px; 
+	padding: 10px 0px; 
+	z-index:-1; 
+	text-align:center;
+	-moz-border-radius: 10px; 
+	-o-border-radius: 10px; 
+	-webkit-border-radius: 10px; 
+	border-radius: 10px; 
+	-khtml-border-radius: 10px; 
+	background: #ffffff;
+	line-height:1.5;
+}
+.main-countdown .countdown-title { color:#f04d3b; font-family: 'Lobster Two', 'Lato', sans-serif, Arial; font-size:39px; line-height:100%; padding:0px 0px 10px; font-style:italic; font-style: normal\9; }
+.qty-text { color:#333333; font-family:Arial; font-size:13px; text-align: left; padding-top:4px; border-top: 1px dotted #cccccc; }
+.qty-text b { color:#f04d3b; }
+
+
+
+/* Sidebar */
+.block-deals .block-content #block-deals .item .product-image { width:60px; margin-right:7px; }
+.block-deals .block-content #block-deals .item .product-details .product-name { line-height:120%; }
+.block-deals .block-content #block-deals .item .product-details .product-name a { font-size:13px; }
+.block-deals .block-content #block-deals .item .product-details .deal-qty { color:#333333; }
+.block-deals .block-content #block-deals .item .product-details .deal-qty b { color:#f04d3b; }
+.block-deals .block-content .actions { font-size:12px; }
+.block-deals .block-content .actions .left { float: left; }
+.block-deals .block-content .actions .separator { float:left; padding:0px 5px 0px 5px; }
+/*.block-deals .block-content .price-box { margin:0px; }
+.block-deals .block-content .price-box .old-price { display:none; }
+.block-deals .block-content .price-box .special-price .price-label { display:none; }
+.block-deals .block-content .price-box .special-price .price { font-size:12px; color:#333333 !important; }*/
+
+
+
+/* Sidebar Featured Deal */
+.dd-featured-deal { background: #ffffff; position: relative; margin-bottom: 15px; }
+.dd-featured-deal .dd-header { margin:0px; border:0px; position: relative; background: #fff; }
+.dd-featured-deal .dd-header .dd-image { position: relative; height: 240px; overflow: hidden; cursor: pointer; }
+.dd-featured-deal .dd-header .dd-image:before { 
+	-webkit-transform: rotate(7deg);
+	-moz-transform: rotate(7deg);
+	-ms-transform: rotate(7deg);
+	-o-transform: rotate(7deg);
+	transform: rotate(7deg); 
+	background: #ffffff;
+	content: '';
+	width: 120%;
+	height: 100px;
+	bottom: -86px;
+	left: -20px;
+	position: absolute;
+	z-index:1;
+}
+.dd-featured-deal .dd-header .dd-image.wide:before { left:-8px; }
+.dd-featured-deal .dd-header .dd-image:after { 
+	content: "";
+	position: absolute;
+	width: 21px;
+	height: 38px; 
+	bottom: -19px;
+	right: 31px;
+	background: #ffffff;
+	-webkit-transform: rotate(55deg);
+	-moz-transform: rotate(55deg);
+	-ms-transform: rotate(55deg);
+	-o-transform: rotate(55deg);
+	transform: rotate(55deg); 
+	z-index:1;
+}
+.dd-featured-deal .dd-header .dd-image .featured-deal-image { position: absolute; top:-10%; width: 120%; max-width: 500px; }
+.dd-featured-deal .dd-content .dd-title a, .dd-featured-deal .dd-content .dd-title a:hover { color:#f04d3b; font-family: 'Lobster Two', 'Lato', sans-serif, Arial; font-size:45px; font-style:italic; margin-top: -11px; left: 0px; width: 100%; text-align: center; z-index:1; }
+.dd-featured-deal .dd-content .dd-actions { text-align: center; margin:5px 0 4px; }
+.dd-featured-deal .dd-content .dd-actions button {
+	background:#32cc60;
+	text-indent:0;
+	display:inline-block;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	font-style:normal;
+	padding: 5px 6px;
+	width:100px;
+	text-decoration:none;
+	text-align:center;
+	text-shadow:1px 1px 0px #259646;
+	border: 0px;
+	-moz-border-radius: 20px; 
+	-o-border-radius: 20px; 
+	-webkit-border-radius: 20px; 
+	border-radius: 20px; 
+	-khtml-border-radius: 20px; 
+	margin-bottom: 5px; 
+}
+.dd-featured-deal .dd-content .dd-actions button:hover {
+	background-color:hsl(0, 100%, 50%);
+}
+.dd-featured-deal .dd-content .dd-actions button:active {
+	position:relative;
+	top:1px;
+}
+.dd-featured-deal .dd-content .dd-actions .qty-text { 
+	background: #FFFFFF;
+	display: inline-block;
+	border: 1px solid #dddddd;
+	padding: 4px 6px;
+	margin: 0px 0 5px 5px;
+	-moz-border-radius: 15px; 
+	-o-border-radius: 15px; 
+	-webkit-border-radius: 15px; 
+	border-radius: 15px; 
+	-khtml-border-radius: 15px; 	
+}
+.dd-featured-deal .dd-content a:hover { text-decoration: none !important; }
+.dd-featured-deal .dd-content .dd-title span { width:100%; text-align:center; left:0; }
+.dd-featured-deal .dd-header .dd-price { position:absolute; z-index: 1; margin-top:145px; top:0px; right:10px; text-align: right; cursor: pointer;  }
+.dd-featured-deal .dd-header .dd-price .price-box { line-height: 1em; }
+.dd-featured-deal .dd-header .dd-price .price-box .regular-price, .dd-featured-deal .dd-header .dd-price .price-box .old-price, .dd-featured-deal .dd-header .dd-price .price-box .special-price { display: block; margin:0px; padding:0px; }
+.dd-featured-deal .dd-header .dd-price .price-box .regular-price span.price { margin-top:25px; }
+.dd-featured-deal .dd-header .dd-price .price-box .price-label { display: none; }
+.dd-featured-deal .dd-header .dd-price .price-box span.price { 
+	/*text-shadow:1px 1px 0px #ffffff; */
+	font-size: 28px; 
+	font-family: 'Josefin Sans', Arial; 
+	background: rgba(255, 255, 255, 0.9); 
+	-moz-border-radius: 16px; 
+	-o-border-radius: 16px; 
+	-webkit-border-radius: 16px; 
+	border-radius: 16px; 
+	-khtml-border-radius: 16px; 	
+	padding: 13px 7px 7px; 
+}
+.dd-featured-deal .dd-header .dd-price .price-box .special-price span.price, .dd-featured-deal .dd-header .dd-price .price-box .regular-price span.price { color:#32cc5f; display: inline-block; font-weight: normal; }
+.dd-featured-deal .dd-header .dd-price .price-box .old-price span.price { 
+	font-size: 18px; 
+	color:#a0a0a0; 
+	font-weight: normal; 
+	margin-bottom: 5px; 
+	padding: 7px 5px 3px; 
+	-moz-border-radius: 12px; 
+	-o-border-radius: 12px; 
+	-webkit-border-radius: 12px; 
+	border-radius: 12px; 
+	-khtml-border-radius: 12px; 	
+	display: inline-block; 
+}
+.dd-featured-deal .dd-content { padding:0px 6px 6px 6px; text-align:center; line-height: 1.5; background: linear-gradient(#f4f4f4,#fdfdfd); }
+.dd-featured-deal .dd-content a { text-decoration:none; }
+.dd-featured-deal .dd-content a:hover { color:#000; text-decoration:underline; }
+.dd-featured-deal .dd-content .product_name { font-weight:bold; font-size:18px; color:#333333; }
+
+/* responsive */
+@media only screen and (max-width: 768px) and (min-width: 480px) {
+	.dd-featured-deal { overflow: hidden; }
+	.dd-featured-deal > div { display: inline-block; }
+	.dd-featured-deal .dd-header { width: 50%; height: 150px; float:left; }
+	.dd-featured-deal .dd-header .dd-image { display: block; height: 150px; }
+	.dd-featured-deal .dd-header .dd-image:after { background: none !important; }
+	.dd-featured-deal .dd-header .dd-image:before { background: none !important; }
+	.dd-featured-deal .dd-content { position: relative; background: #FFFFFF; width: 50%; height: 150px; padding: 0px; }
+	.dd-featured-deal .dd-content:before {  
+		-webkit-transform: rotate(15deg);
+		-moz-transform: rotate(15deg);
+		-ms-transform: rotate(15deg);
+		-o-transform: rotate(15deg);
+		transform: rotate(15deg); 
+		background: #FFFFFF;
+		content: '';
+		width: 100px;
+		height: 120%;
+		bottom: -35px;
+		left: -25px;
+		position: absolute;
+		z-index:1;
+	}
+	.dd-featured-deal .dd-content:after {  
+		content: "";
+		position: absolute;
+		width: 21px;
+		height: 38px; 
+		top: 16px;
+		left: -17px;
+		background: #FFFFFF;
+		-webkit-transform: rotate(155deg);
+		-moz-transform: rotate(155deg);
+		-ms-transform: rotate(155deg);
+		-o-transform: rotate(155deg);
+		transform: rotate(155deg); 
+		z-index:1;
+	}
+	.dd-featured-deal .dd-content > * { z-index: 2; position: relative; }
+	.dd-featured-deal .dd-content .dd-title { position: relative; top:0px; left: 0px; line-height: 100%; margin: 5px 0px; }
+	.dd-featured-deal .dd-content .dd-actions { display: none; }
+	.dd-featured-deal .dd-header .dd-price { position: absolute; margin: 0px; top:0px; right: 33px; }
+	.dd-featured-deal .dd-header .dd-price .price-box .regular-price { margin-top:0px; }
+}
+
+@media only screen and (max-width: 480px) and (min-width: 360px) {
+	.dd-featured-deal .dd-header .dd-image:before { bottom: -75px; }
+}
+
+@media only screen and (max-width: 360px) {
+	.dd-featured-deal .dd-header .dd-image:before { bottom: -81px; }
+}
+
+
+
+/* scroll animations */
+.animated {
+  -webkit-animation-duration: 0.5s;
+  animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease-out;
+  animation-timing-function: ease-out;
+}
+
+.bounce1 {
+  -webkit-animation-name: bounce1;
+  animation-name: bounce1;
+}
+
+.bounce2 {
+  -webkit-animation-name: bounce2;
+  animation-name: bounce2;
+}
+
+.bounce3 {
+  -webkit-animation-name: bounce3;
+  animation-name: bounce3;
+}
+
+.bounce4 {
+  -webkit-animation-name: bounce4;
+  animation-name: bounce4;
+}
+
+.bounce5 {
+  -webkit-animation-name: bounce5;
+  animation-name: bounce5;
+}
+
+@keyframes bounce1 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-1%;
+	width: 102%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+@keyframes bounce2 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-3%;
+	width: 106%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+@keyframes bounce3 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-5%;
+	width: 110%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+@keyframes bounce4 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-10%;
+	width: 120%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+@keyframes bounce5 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-15%;
+	width: 130%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+@-webkit-keyframes bounce1 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-1%;
+	width: 102%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+@-webkit-keyframes bounce2 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-3%;
+	width: 106%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+@-webkit-keyframes bounce3 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-5%;
+	width: 110%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+@-webkit-keyframes bounce4 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-10%;
+	width: 120%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+@-webkit-keyframes bounce5 {
+  0% {
+  	left:0%;
+	width: 100%;
+  }
+
+  50% {
+  	left:-15%;
+	width: 130%;
+  }
+
+  100% {
+  	left:0%;
+	width: 100%;
+  }
+}
+
+
+
+/* Slim Countdown */
+@media only screen and (min-width: 480px) {
+	.dd-slim-countdown { overflow: hidden; }
+	.dd-slim-countdown > div { display: inline-block; }
+	.dd-slim-countdown .dd-header { width: 50%; height: 150px; float:left; }
+	.dd-slim-countdown .dd-header .dd-image { display: block; height: 150px; }
+	.dd-slim-countdown .dd-header .dd-image:after { background: none !important; }
+	.dd-slim-countdown .dd-header .dd-image:before { background: none !important; }
+	.dd-slim-countdown .dd-content { position: relative; background: #FFFFFF; width: 50%; height: 150px; padding: 0px; }
+	.dd-slim-countdown .dd-content:before {  
+		-webkit-transform: rotate(15deg);
+		-moz-transform: rotate(15deg);
+		-ms-transform: rotate(15deg);
+		-o-transform: rotate(15deg);
+		transform: rotate(15deg); 
+		background: #FFFFFF;
+		content: '';
+		width: 100px;
+		height: 120%;
+		bottom: -35px;
+		left: -25px;
+		position: absolute;
+		z-index:1;
+	}
+	.dd-slim-countdown .dd-content:after {  
+		content: "";
+		position: absolute;
+		width: 21px;
+		height: 38px; 
+		top: 16px;
+		left: -17px;
+		background: #FFFFFF;
+		-webkit-transform: rotate(155deg);
+		-moz-transform: rotate(155deg);
+		-ms-transform: rotate(155deg);
+		-o-transform: rotate(155deg);
+		transform: rotate(155deg); 
+		z-index:1;
+	}
+	.dd-slim-countdown .dd-content > * { z-index: 2; position: relative; }
+	.dd-slim-countdown .dd-content .dd-title { position: relative; top:0px; left: 0px; line-height: 100%; margin: 5px 0px; }
+	.dd-slim-countdown .dd-content .dd-actions { display: none; }
+	.dd-slim-countdown .dd-header .dd-price { position: absolute; margin: 0px; top:0px; right: 33px; }
+	.dd-slim-countdown .dd-header .dd-price .price-box .regular-price span.price { margin-top:0px; }
+}
+
+
+
+

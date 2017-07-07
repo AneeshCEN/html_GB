@@ -1,0 +1,618 @@
+body{
+    font-family: roboto;
+}
+.pageBk {
+    background-image: url(../img/bk.jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-attachment: fixed;
+    height: auto;
+    background-size: cover;
+    min-height: 100%;
+}
+.exploreTitle {
+    color: #fff;
+    font-size: 60px;
+    font-family: Roboto;
+    text-align: center;
+    font-weight: 300;
+    line-height: 70px;
+    margin-top: 100px;
+    transition: all 300ms;
+}
+.exploreButton {
+    width: 180px;
+    background-color: #1db960;
+    color: #fff;
+    height: 40px;
+    line-height: 40px;
+    font-size: 16px;
+    padding: 0px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+    margin-bottom: 80px;
+    text-align: center;
+    transition: all 300ms;
+}
+.exploreSubTitle {
+    color: #fff;
+    font-size: 23px;
+    font-family: Roboto;
+    text-align: center;
+    font-weight: 300;
+    height: 32px;
+    overflow: hidden;
+    min-height: 0px;
+    transition: all 300ms;
+}
+.mainTitle {
+    margin-top: 5%;
+    background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.3), rgba(0, 128, 0, 0));
+    transition: all 300ms;
+}
+
+/* Chatbot style starts here */
+.chatBox {
+    height: 45px;
+    background-color: #fff;
+    width: 300px;
+    position: fixed;
+    right: 30px;
+    bottom: 0px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    font-family: roboto;
+    transition: all 500ms;
+    box-shadow: 1px 1px 50px 1px rgba(0,0,0,0.3);
+}
+.chatTitle {
+    background-color: #19bf60;
+    height: 45px;
+    color: #fff;
+    line-height: 40px;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+}
+
+.chatUser {
+    height: 45px;
+    line-height: 45px;
+    font-size: 15px;
+}
+.chatActive {
+    height: 15px;
+    font-size: 10px;
+    line-height: 11px;
+    color: #ececec;
+    font-weight: 300;
+}
+.chatClose {
+    background-image: url(../img/uparrow.png);
+    height: 25px;
+    position: absolute;
+    right: 8px;
+    top: 10px;
+    width: 25px;
+    padding: 0px;
+    cursor: pointer;
+    border-radius: 4px;
+    background-size: 16px;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 500ms;
+}
+.chatClose:hover {
+    background-color: #14ab54;
+}
+.chatWrapper {
+    height: 250px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 0px;
+    transition: all 500ms;
+}
+.userThumbnail {background-image: url(../img/bot.png);height: 40px;width: 40px;background-size: 26px;background-repeat: no-repeat;background-position: center;border-radius: 25px;margin: 5px 0px 5px 5px;float: left;background-color: #109649;}
+.userMessage {
+    padding: 10px 15px 15px 15px;
+    width: calc(100% - 55px);
+    font-size: 12px;
+    line-height: 15px;
+    word-wrap: break-word;
+    float: left;
+}
+.incomingMessage {float: left;width: calc(100% - 20px);margin-top: 7px;margin-bottom: 5px;position: relative;color: #151515;margin-left: 5px;margin-right: 0px;}
+.userMessageAgo {
+    font-size: 10px;
+    text-align: right;
+    height: 15px;
+    line-height: 15px;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    color: #949494;
+}
+.outgoingMessage {float: right;background-color: #464646;color: #fff;width: calc(100% - 75px);margin-top: 7px;margin-bottom: 5px;border-radius: 4px;position: relative;margin-right: 15px;margin-left: 0;}
+.outgoingMessage .userMessageAgo {
+    color: #ffffff;
+}
+.outgoingMessage:after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #23a7ff;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.chatWrapper::-webkit-scrollbar {
+    width: 4px;
+}
+.chatWrapper::-webkit-scrollbar-track {
+    background: rgba(239, 239, 239, 0.28);
+}
+.chatWrapper::-webkit-scrollbar-thumb {
+    background: rgba(20,187,91,0.5);
+}
+.textMessage {
+    height: 50px;
+    padding: 0px 7px;
+    width: calc(100% - 60px);
+}
+.col-md-2.speech {
+    padding-left: 0px;
+    padding-right: 2px;
+}
+.textMessageField {background-color: #ffffff;height: 33px;margin-top: 5px;width: 100%;outline: none;padding: 5px 7px 0px 7px;color: #333;font-size: 13px;transition: all 500ms;border-radius: 2px;border: 1px solid rgba(160, 160, 160, 0.37);}
+.chatSend {
+    border-top: 1px solid #ddd;
+    height: 50px;
+}
+.textMessageField:focus {
+    border: 1px solid rgba(20,187,91,0.4);
+}
+.sendButton {background-image: url(../img/sendarrow.png);height: 50px
+    ;background-size: 20px;background-repeat: no-repeat;background-position: 0px 12px;padding: 0px;width: 30px;cursor: pointer;}
+.sendButton:hover {
+    background-image: url(../img/sendarrowfilled.png);
+}
+.speech{background-image: url(../img/microphn.png);height: 50px;
+    background-repeat: no-repeat;background-position: 0px 0px;padding: 0px;width: 30px;cursor: pointer;}
+.speech:hover{background-image: url(../img/microfilled.png);}
+.textMessageField::-webkit-scrollbar {
+    width: 5px;
+}
+.chatBox.msgShrink {
+   height: auto;/* height: 340px;*/
+}
+.chatClose.rotateArrow {
+    -ms-transform: rotate(180deg); /* IE 9 */
+    -webkit-transform: rotate(180deg); /* Safari */
+    transform: rotate(180deg);
+}
+.chatScroller {
+    padding: 0px;
+}
+.incomingMessage .userMessage.loadinganim {
+    background-image: url(../img/loading.gif);
+    background-size: 30px;
+    background-position: 10px 5px;
+    background-repeat: no-repeat;
+}
+.incomingMessage.loadingAnim {
+    background-color: #fff;
+}
+.incomingMessage .userMessage {
+    min-height: 50px;
+    background-color: #e0e0e0;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+.incomingMessage .userMessage:after {
+    content: '';
+    position: absolute;
+    left: -7px;
+    width: 0;
+    height: 0;
+    top: 25px;
+    transform: translateY(-50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #e0e0e0;
+}
+.outgoingMessage:after {
+    content: '';
+    position: absolute;
+    right: -6px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid #464646;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.loadingMessage .userMessage:after {
+    content: '';
+    position: absolute;
+    left: -7px;
+    width: 0;
+    height: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #ecf0f1;
+}
+.loadingAnim {
+    height: 40px;
+    background-image: url(http://www.chynow.pl/bundles/velacmssolutionchynow/images/animation3.gif);
+    background-size: 200px;
+    background-position: -80px 50%;
+    background-repeat: no-repeat;
+    padding: 0px;
+    width: 52px;
+}
+.loadingMessage {
+    float: left;
+    width: calc(100% - 20px);
+    margin-top: 7px;
+    margin-bottom: 5px;
+    position: relative;
+    color: #151515;
+    margin-left: 5px;
+    margin-right: 0px;
+}
+.loadingMessage .userMessage {
+    min-height: 50px;
+    background-color: #ecf0f1;
+    border-radius: 4px;
+    margin-left: 10px;
+    padding: 5px 15px 5px 15px;
+}
+.realEstatescroller {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 86%;
+    margin-left: 7%;
+    height: 0%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 300ms;
+    border-radius: 4px;
+}
+.SellerRealEstatescroller {
+    background-color: rgba(255, 255, 255, 0.3);
+    width: 86%;
+    margin-left: 7%;
+    height: 0%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: all 300ms;
+    border-radius: 4px;
+    padding: 0px;
+}
+.mainTitle.realEstates {
+    margin-top: 0px;
+}
+
+.mainTitle.realEstates .exploreTitle {
+    margin-top: 10px;
+    font-size: 50px;
+}
+
+.mainTitle.realEstates .exploreSubTitle {
+    height: 0px;
+}
+
+.mainTitle.realEstates .exploreButton {
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+.realEstatescroller.realEstates {
+    height: calc(100% - 200px);
+    margin-bottom: 15px;
+}
+.SellerRealEstatescroller.realEstates {
+    height: auto;
+    margin-bottom: 15px;
+    padding: 5px;
+}
+.cardWrapper {
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 15px 0px 0px 15px;
+    color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    height: auto;
+    width: calc(25% - 15px);
+}
+.cardWrapperSeller{
+    background-color: rgba(0, 0, 0, 0.7);
+    margin: 5px;
+    color: #fff;
+    border-radius: 4px;
+    overflow: hidden;
+    height: auto;
+    width: calc(20% - 10px);
+    padding: 0px;
+}
+.cardWrapper:nth-child(4n) {
+    width: calc(25% - 30px);
+}
+.PropertySubType {
+    height: 15px;
+    font-size: 13px;
+    line-height: 15px;
+    color: orange;
+    margin-top: 15px;
+    width: auto;
+    padding-right: 0px;
+}
+.PropertySubTypeVal {
+    height: 15px;
+    font-size: 13px;
+    line-height: 15px;
+    font-weight: 600;
+    width: auto;
+    margin-top: 15px;
+    padding-left: 8px;
+}
+
+.LivingArea {height: 20px;font-size: 13px;line-height: 20px;color: orange;margin-top: 10px;width: auto;text-align: center;padding-right: 0px;}
+
+.LivingAreaVal {height: 15px;font-size: 12px;line-height: 15px;font-weight: 600;text-align: center;margin-bottom: 15px;}
+
+.SI_Address {
+    height: 15px;
+    font-size: 14px;
+    line-height: 15px;
+    color: orange;
+    margin-top: 10px;
+}
+
+.SI_AddressVal {
+    height: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+}
+.BedroomsTotal {
+    height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+    color: orange;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.BedroomsTotalVal {
+    height: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.ListPrice {
+    height: 20px;
+    font-size: 13px;
+    line-height: 20px;
+    color: orange;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.ListPriceVal {
+    height: 15px;
+    font-size: 12px;
+    line-height: 15px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+}
+.SellerThumbNail {
+    height: 64px;
+    background-image: url(../img/man.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 20px;
+    background-size: 60px;
+    margin-bottom: 10px;
+}
+.SellerAgentName {
+    color: orange;
+    font-size: 15px;
+    text-align: center;
+}
+
+.SellerPhoneNumber {
+    width: auto;
+    float: left;
+    padding-right: 5px;
+    color: #6f6f6f;
+    font-size: 13px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+
+.SellerPhoneNumberVal {
+    width: auto;
+    padding-left: 0px;
+    font-size: 13px;
+    margin-bottom: 15px;
+    margin-top: 5px;
+}
+.SellerPhoneNumberWrapper {
+    float: left;
+    left: 50%;
+    transform: translateX(-50%);
+    position: relative;
+    margin: 0px;
+}
+
+.SellerPriceTrend {
+    text-align: center;
+    font-size: 18px;
+    color: #fff;
+    font-weight: 200;
+    margin-bottom: 25px;
+}
+
+.SellerPriceTrendVal {
+    text-align: center;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 200;
+    line-height: 40px;
+    height: 40px;
+}
+.SellerPriceTrendWrapper {
+    opacity: 0;
+    visibility: hidden;
+    height: 0px;
+    transition: all 300ms;
+}
+.SellerPriceTrendWrapper.realEstates {
+    opacity: 1;
+    visibility: visible;
+    height: 90px;
+}
+.realEstatescroller::-webkit-scrollbar{
+    width: 4px;
+}
+.realEstatescroller::-webkit-scrollbar-track{
+    background: rgba(255, 255, 255, 0);
+}
+.realEstatescroller::-webkit-scrollbar-thumb{
+    background: rgb(95, 95, 95);
+    border-radius: 7px;
+}
+.noPriceTrend {
+    text-align: center;
+    font-size: 20px;
+    color: #fff;
+    font-weight: 300;
+    height: 70px;
+    line-height: 70px;
+}
+
+/* autofill */
+.autofillWrapper {
+    position: absolute;
+    max-height: 210px;
+    bottom: 50px;
+    background-color: #fff;
+    width: calc(100% - 20px);
+    margin-left: 10px;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    padding: 2px 0px;
+    overflow: hidden;
+    transition: all 300ms;
+    min-height: 29px;
+}
+.autofillList {
+    height: 25px;
+    line-height: 25px;
+    margin: 0px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 0px 15px;
+    transition: all 300ms;
+    cursor: pointer;
+}
+.autofillList:hover {
+    background-color: rgba(25, 191, 96, 0.15);
+}
+.autofillList.selectedAutofill {
+    background-color: rgba(25, 191, 96, 0.30);
+}
+
+
+@media (max-width: 768px) {
+    .pageBk {
+        background-size: cover;
+        background-position: 35%;
+    }
+    .exploreTitle {
+        margin-top: 5%;
+        line-height: 36px;
+        width: 100%;
+        font-size: 36px;
+    }
+    .exploreSubTitle {
+        font-size: 12px;
+        margin-top: 5px;
+        line-height: 16px;
+    }
+    .exploreButton {
+        width: 30%;
+        float: left;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        margin-top: 30px;
+    }
+    .chatBox {
+        right: auto !important;
+        left: 15px !important;
+        width: 45%;
+    }
+    .chatBox.msgShrink {
+        height: 300px;
+    }
+    .chatWrapper {
+        height: 210px;
+    }
+}
+
+@media (max-width: 500px) {
+    .pageBk {
+        background-size: cover;
+        background-position: 35%;
+    }
+    .exploreTitle {
+        margin-top: 15%;
+        line-height: 40px;
+        width: 100%;
+        font-size: 38px;
+    }
+    .exploreSubTitle {
+        font-size: 15px;
+        margin-top: 20px;
+        line-height: 20px;
+    }
+    .exploreButton {
+        width: 60%;
+        float: left;
+        font-size: 16px;
+        height: 35px;
+        line-height: 35px;
+        margin-top: 30px;
+    }
+    .chatBox {
+        right: auto !important;
+        left: 20px !important;
+        width: calc(100% - 40px) !important;
+    }
+    .chatBox.msgShrink {
+        height: 340px;
+    }
+    .chatWrapper {
+        height: 250px;
+    }
+}
+
+@media (max-width: 992px) {
+
+}
+
+@media (max-width: 1200px) {
+
+}
